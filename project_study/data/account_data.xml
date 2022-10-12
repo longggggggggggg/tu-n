@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="study_action" model="ir.actions.act_window">
+           <field name="name">Pstudy</field>
+           <field name="res_model">crm.activity.report</field>
+           <field name="view_mode">tree,form</field>
+       </record>
+
+  <menuitem
+        id="project_study"
+        name="study"
+        />
+<menuitem
+        id="project_study1"
+        name="Sales"
+        parent="project_study.project_study"
+        />
+</odoo>

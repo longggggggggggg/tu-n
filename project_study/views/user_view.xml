@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!---->
+<odoo>
+    <record id="user1_action" model="ir.actions.act_window">
+        <field name="name">User</field>
+        <field name="res_model">user1</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+        <record id="user1_tree_view" model="ir.ui.view">
+            <field name="name">project_study</field>
+            <field name="model">project.study</field>
+            <field name="arch" type="xml">
+                <tree string="project_study">
+                    <field name="user_ids"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+<!--    <record id="school_student_search" model="ir.ui.view">-->
+<!--        <field name="name">user1.form</field>-->
+<!--        <field name="model">user1</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="name"/>-->
+<!--                            <field name="partner_id"/>-->
+<!--                            <field name="tax_ids"/>-->
+<!--                            <field name="err"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--         </field>-->
+<!--    </record>-->
+<!--    menuitem-->
+    <menuitem id="user"
+              name="User"
+              parent="enmasys_root"
+              action="user1_action"/>
+
+</odoo>

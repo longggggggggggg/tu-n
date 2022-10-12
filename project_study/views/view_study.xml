@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="study_action" model="ir.actions.act_window">
+        <field name="name">project_study</field>
+        <field name="res_model">project.study</field>
+        <field name="help" type="html">
+            <p>create first student</p>
+        </field>
+    </record>
+    <record id="project_study_tree_view" model="ir.ui.view">
+        <field name="name">project_studys</field>
+        <field name="model">project.study</field>
+        <field name="arch" type="xml">
+            <tree string="project.study">
+                <field name="name"/>
+                <field name="status"/>
+                <field name="assign_to"/>
+                <!--                <field name="user_ids"/>-->
+            </tree>
+        </field>
+    </record>
+    <record id="school_student_search" model="ir.ui.view">
+        <field name="name">school.student.search</field>
+        <field name="model">project.study</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="status"/>
+                            <field name="assign_to"/>
+                        </group>
+                        <group>
+                            <field name="dateLine"/>
+                            <field name="note"/>
+                        </group>
+                        <field name="description"/>
+                        <field name="user_ids"/>
+                    </group>
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+    <record id="project_study1" model="ir.ui.view">
+        <field name="name">request.study</field>
+        <field name="model">project.study</field>
+        <field name="arch" type="xml">
+
+            <search string="My Pet Search">
+                <field name="name" string="Pet Name"/>
+                <field name='status' string="status"/>
+
+                <group expand='0' string='Filters'>
+
+                    <filter name="status" string="status" domain="[('status', '=',  'todo')]" context="{'group_by':'status'}"/>
+                    <filter name='Assign_to' string="assign_to" context="{'group_by':'assign_to'}"/>
+                    <separator/>
+                    <!--                <filter name="male_filter" string="Male" domain="[('gender', '=',  'male')]"/>-->
+                    <!--                <filter name="female_filter" string="Female" domain="[('gender', '=',  'female')]"/>-->
+                </group>
+
+            </search>
+        </field>
+    </record>
+    <record id="school_student_search1" model="ir.ui.view">
+        <field name="name">user.form</field>
+        <field name="model">user</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+    <!-- Top menu item -->
+    <menuitem id="enmasys_root"
+              name="Enmasys"
+              action="study_action"
+              sequence="100"/>
+    <menuitem id="enmasys_study_root"
+              name="Study"
+              parent="enmasys_root"
+              sequence="1"/>
+    <menuitem id="Enmasys_study"
+              name="Study"
+              parent="enmasys_study_root"
+              action="study_action"
+              sequence="2"/>\
+</odoo>
